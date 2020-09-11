@@ -11,14 +11,14 @@ interface AddStudentRecordState {
 
 
 export class AddStudent extends React.Component<RouteComponentProps<{}>, AddStudentRecordState> {
-    constructor(props) {
+    constructor(props: any) {
         super(props);
 
         //here we are intializing the interface's fields with default values.
         this.state = { title: "", loading: true, studentList: new StudentListData };
 
         //the studentid variable will get the student id from URL.
-        var studentid = this.props.match.params["studentid"];
+        var studentid = props.match.params["studentid"];
 
         //if studentid is greater than 0 then fetch method will get the specific student record and display it as in edit mode.
         if (studentid > 0) {
@@ -52,7 +52,7 @@ export class AddStudent extends React.Component<RouteComponentProps<{}>, AddStud
 
     //this method will save the record into database. If the URL has an StudentId, 
     //then it will update the record and if the URL has not student Id parameter than it will save the record.
-    private FuncSave(event) {
+    private FuncSave(event: any) {
         event.preventDefault();
         const data = new FormData(event.target);
         // PUT request for Edit employee.  

@@ -23,7 +23,7 @@ var AddStudent = /** @class */ (function (_super) {
         //here we are intializing the interface's fields with default values.
         _this.state = { title: "", loading: true, studentList: new StudentList_1.StudentListData };
         //the studentid variable will get the student id from URL.
-        var studentid = _this.props.match.params["studentid"];
+        var studentid = props.match.params["studentid"];
         //if studentid is greater than 0 then fetch method will get the specific student record and display it as in edit mode.
         if (studentid > 0) {
             fetch('api/Student/Details/' + studentid)
