@@ -48,7 +48,7 @@ export class StudentList extends React.Component<RouteComponentProps<{}>, Studen
     }
     // this method will be responsible for deleting the student record.
     private FuncDelete(id: number) {
-        if (!confirm("Do you want to delete student with this Id: " + id))
+        if (!window.confirm("Do you want to delete student with this Id: " + id))
             return;
         else {
             //this fetch method will get the specific student record using student id.
